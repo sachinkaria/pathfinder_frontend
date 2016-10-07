@@ -3,7 +3,8 @@ pathfinder.controller('PostsCtrl', ['$scope','PostsService', function($scope, Po
 
   $scope.getPosts = function(){
     return PostsService.getPosts().then(function(response){
-      $scope.posts = response.data
+      $scope.posts = response.data;
+      console.log($scope.posts);
     });
   };
 
