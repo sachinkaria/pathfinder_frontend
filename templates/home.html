@@ -1,4 +1,6 @@
 <div ng-repeat="post in posts">
   {{ post.description }}
+  <p>{{post.created_at | amCalendar }}</p>
   {{ post.user_id }}
+  {{ post.username }}
 </div>

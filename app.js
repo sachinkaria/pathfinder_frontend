@@ -1,4 +1,4 @@
-var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCookie'])
+var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCookie','angularMoment'])
 
 .run(['$rootScope', '$state', function($rootScope, $state) {
   $rootScope.$on('auth:login-success', function() {

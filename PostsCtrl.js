@@ -5,9 +5,11 @@ pathfinder.controller('PostsCtrl', ['$scope','PostsService','$auth', function($s
   $scope.getPosts = function(){
     return PostsService.getPosts().then(function(response){
       $scope.posts = response.data;
-      console.log($scope.posts);
     });
   };
+
+  _getUserName = function(){
+  }
 
   $scope.getPosts();
 }]);
