@@ -1,5 +1,6 @@
-pathfinder.controller('PostsCtrl', ['$scope','PostsService', function($scope, PostsService){
-  $scope.test = "Hello World!";
+pathfinder.controller('PostsCtrl', ['$scope','PostsService','$auth', function($scope, PostsService, $auth){
+  $scope.current_user = $auth.user;
+
 
   $scope.getPosts = function(){
     return PostsService.getPosts().then(function(response){
