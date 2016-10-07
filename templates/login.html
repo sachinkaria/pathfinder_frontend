@@ -1,6 +1,9 @@
 <div class="jumbotron">
   <div class="container">
+    <img alt="pathfinder" src="logo.png">
     <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
+      <br>
+      <br>
       <div class="form-group">
         <input type="email" name="email" placeholder="Email" ng-model="loginForm.email" required="required" class="form-control"/>
       </div>
@@ -11,6 +14,8 @@
 
       <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
     </form>
+    <br>
+    <br>
     <button class="btn btn-block btn-social btn-lg btn-facebook" ng-click="authenticate('facebook')">
       <span class="fa fa-facebook"></span>
       Sign in with Facebook
