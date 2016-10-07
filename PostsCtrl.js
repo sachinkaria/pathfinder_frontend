@@ -5,9 +5,12 @@ pathfinder.controller('PostsCtrl', ['$scope','PostsService','$auth','ProfileServ
   $scope.getPosts = function(){
     return PostsService.getPosts().then(function(response){
       $scope.posts = response.data;
-      console.log($scope.current_user);
     });
   };
+
+  $scope.createPost = function(post){
+    PostsService.createPost(post);
+  }
 
   $scope.getPosts();
 }]);

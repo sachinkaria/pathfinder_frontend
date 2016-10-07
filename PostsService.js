@@ -9,4 +9,10 @@ pathfinder.service('PostsService', ['$http', function($http){
   self.getUserPosts = function(id){
     return $http.get("http://localhost:3000/users/" + id)
   }
+
+  self.createPost = function(post){
+    $http.post("http://localhost:3000/posts.json", post).success(function(data){
+    console.log(data)});
+  };
+
 }]);

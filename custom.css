@@ -10,13 +10,20 @@ background-size: cover;
 
 }
 
+.newsfeed {
+  border-radius: 5px;
+}
+
 .post-box {
   margin-left: 50px;
   overflow: hidden;
   min-height: 100px;
   max-height: 500px;
-  max-width: 900px;
-  background-color: grey;
+  max-width: 600px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
 }
 
 .post-box-time {
@@ -39,4 +46,8 @@ background-size: cover;
 .vertical-center {
   display: flex;
   align-items: center;
+}
+
+.form-inline .form-group .form-control {
+  min-width: 500px;
 }

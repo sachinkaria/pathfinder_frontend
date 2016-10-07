@@ -15,6 +15,14 @@
     </div>
   </div>
 </div>
+
+<form class="form-inline">
+  <div class="form-group">
+    <input class="form-control" placeholder="What's on your mind?" type="text" ng-model="post.description">
+    <button class="btn btn-default" ng-click="createPost(post)" >Post</button>
+  </div>
+</form>
+
 <div class="container">
   <div class="newsfeed">
     <div class="post-box" ng-repeat="post in posts">

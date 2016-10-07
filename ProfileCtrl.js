@@ -8,5 +8,9 @@ pathfinder.controller('ProfileCtrl', ['$scope','$auth','PostsService', function(
     });
   };
 
+  $scope.createPost = function(post){
+    PostsService.createPost(post);
+  }
+
   $scope.getPosts();
 }]);
