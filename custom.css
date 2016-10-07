@@ -1,13 +1,28 @@
 /*body{
-  background-image: url("background.jpg");
-  background-position: center;
-  background-size: cover;
+background-image: url("background.jpg");
+background-position: center;
+background-size: cover;
 }*/
 
 .navbar.navbar-default {
   min-height: 80px;
   opacity: 0.6;
 
+}
+
+.post-box {
+  margin-left: 50px;
+  overflow: hidden;
+  min-height: 100px;
+  max-height: 500px;
+  max-width: 900px;
+  background-color: grey;
+}
+
+.post-box-time {
+  position: absolute;
+  right: 10;
+  top: 10;
 }
 
 .jumbotron{

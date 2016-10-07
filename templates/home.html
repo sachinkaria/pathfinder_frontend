@@ -1,9 +1,29 @@
-<div>
-  <button class="btn-default" ui-sref="profile">My Profile</button>
+<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img alt="pathfinder" src="logo.png">
+    </div>
+    <div class="collapse navbar-collapse navbar-menubuilder">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a ui-sref="home">Home</a>
+        </li>
+        <li><a ui-sref="profile">Profile</a>
+        </li>
+        <li><a href="messages">Messages</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
-<div ng-repeat="post in posts">
-  {{ post.description }}
-  <p>{{post.created_at | amCalendar }}</p>
-  {{ post.user_id }}
-  {{ post.username }}
+<div class="container">
+  <div class="newsfeed">
+    <div class="post-box" ng-repeat="post in posts">
+      {{ post.description }}
+      <div class="post-box-time">
+        <p>{{post.created_at | amCalendar }}</p>
+      </div>
+      {{ post.user_id }}
+      {{ post.username }}
+    </div>
+  </div>
 </div>
