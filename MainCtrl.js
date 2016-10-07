@@ -21,4 +21,14 @@ pathfinder.controller('MainCtrl', ['$scope','$state','$auth', function($scope,$s
     });
     $state.go('home');
   };
+
+  $scope.handleBtnClick = function() {
+  $auth.authenticate('github')
+    .then(function(resp) {
+      console.log('facebook yeah!')
+    })
+    .catch(function(resp) {
+      console.log('facebook noooo')
+    });
+};
 }]);

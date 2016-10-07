@@ -22,7 +22,8 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
 
   $urlRouterProvider.otherwise('/');
   $authProvider.configure({
-    apiUrl: 'http://localhost:3000'
+    apiUrl: 'http://localhost:3000',
+    facebook: '/auth/facebook'
   });
 
 }])
