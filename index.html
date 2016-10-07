@@ -2,6 +2,8 @@
 <head>
   <title>Get Penta</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="custom.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <script src="https://unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="bower_components/angular-cookie/angular-cookie.js"></script>
@@ -14,14 +16,14 @@
 </head>
 <body ng-app="pathfinder">
   <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        Pathfinder
-      </a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="pathfinder" src="logo.png">
+        </a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
   <div ui-view></div>
 </body>
 </html>
