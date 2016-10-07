@@ -1,19 +1,28 @@
-<div>
-  <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
-    <div class="form-group">
-      <label>email</label>
-      <input type="email" name="email" ng-model="loginForm.email" required="required" class="form-control"/>
-    </div>
+<div class="jumbotron">
+  <div class="container">
+    <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email" ng-model="loginForm.email" required="required" class="form-control"/>
+      </div>
 
-    <div class="form-group">
-      <label>password</label>
-      <input type="password" name="password" ng-model="loginForm.password" required="required" class="form-control"/>
-    </div>
+      <div class="form-group">
+        <input type="password" name="password" placeholder="Password" ng-model="loginForm.password" required="required" class="form-control"/>
+      </div>
 
-    <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
-  </form>
+      <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+    </form>
 
-  <button ng-click="authenticate('facebook')">
-    Sign in with Facebook
-  </button>
+    <button class="btn btn-block btn-social btn-lg btn-facebook" ng-click="authenticate('facebook')">
+      <span class="fa fa-facebook"></span>
+      Sign in with Facebook
+    </button>
+    <button class="btn btn-block btn-social btn-lg btn-twitter" ng-click="authenticate('facebook')">
+      <span class="fa fa-twitter"></span>
+      Sign in with Twitter
+    </button>
+    <button class="btn btn-block btn-social btn-lg btn-google" ng-click="authenticate('facebook')">
+      <span class="fa fa-google"></span>
+      Sign in with Google
+    </button>
+  </div>
 </div>
