@@ -23,7 +23,7 @@ pathfinder.controller('MainCtrl', ['$scope','$state','$auth', function($scope,$s
   };
 
   $scope.handleBtnClick = function() {
-  $auth.authenticate('github')
+  $auth.authenticate('facebook')
     .then(function(resp) {
       console.log('facebook yeah!')
     })

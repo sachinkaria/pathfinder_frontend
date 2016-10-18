@@ -6,17 +6,18 @@ pathfinder.controller('PostsCtrl', ['$scope','$auth','$interval','ProfileService
   $scope.getPosts = function(){
     return PostsService.getPosts().then(function(response){
       $scope.posts = response.data;
+      console.log(response.data)
     });
   };
 
   $scope.createPost = function(post){
     PostsService.createPost(post);
-  }
+  };
 
   $scope.getPosts();
 
-  $interval(function() {
-    $scope.getPosts();
-  }, $scope.refreshInterval * 1000);
+  // $interval(function() {
+  //   $scope.getPosts();
+  // }, $scope.refreshInterval * 1000);
 
 }]);

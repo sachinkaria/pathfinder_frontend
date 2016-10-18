@@ -27,9 +27,20 @@ background-size: cover;
 }
 
 .post-box-time {
-  position: absolute;
+  float: right;
   right: 10;
   top: 10;
+}
+.post-box-username {
+  float: left;
+  right: 10;
+  top: 10;
+}
+
+.post-box-content {
+  style: block;
+  min-width: 600px;
+  text-align: center;
 }
 
 .jumbotron{
