@@ -1,6 +1,7 @@
-pathfinder.controller('PostsCtrl', ['$scope','PostsService','$auth','ProfileService', function($scope, PostsService, $auth, ProfileService){
+pathfinder.controller('PostsCtrl', ['$scope','$auth','$interval','ProfileService','PostsService', function($scope, $auth, $interval, ProfileService, PostsService){
   $scope.posts = [];
   $scope.current_user = $auth.user;
+  $scope.refreshInterval = 2;
 
   $scope.getPosts = function(){
     return PostsService.getPosts().then(function(response){
@@ -13,4 +14,9 @@ pathfinder.controller('PostsCtrl', ['$scope','PostsService','$auth','ProfileServ
   }
 
   $scope.getPosts();
+
+  $interval(function() {
+    $scope.getPosts();
+  }, $scope.refreshInterval * 1000);
+
 }]);
