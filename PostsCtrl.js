@@ -21,8 +21,4 @@ pathfinder.controller('PostsCtrl', ['$scope','$auth','$interval','ProfileService
 
   $scope.getPosts();
 
-  $interval(function() {
-    $scope.getPosts();
-  }, $scope.refreshInterval * 1000);
-
 }]);
