@@ -12,7 +12,14 @@ pathfinder.service('PostsService', ['$http', function($http){
 
   self.createPost = function(post){
     $http.post("http://localhost:3000/posts.json", post).success(function(data){
-    console.log(data)});
+      console.log(data)
+    });
+  };
+
+  self.destroyPost = function(id){
+    $http.delete("http://localhost:3000/posts/" + id).success(function(data){
+      console.log(data)
+    });
   };
 
 }]);

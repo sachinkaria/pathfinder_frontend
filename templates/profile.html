@@ -16,23 +16,25 @@
     </div>
 </div>
 
-<h2> {{ current_user.name }} </h2>
-<h3> {{ current_user.email }} </h3>
-<form class="form-inline">
-  <div class="form-group">
-    <input class="form-control" placeholder="What's on your mind?" type="text" ng-model="post.description">
-    <button class="btn btn-default" ng-click="createPost(post)" >Post</button>
-  </div>
-</form>
+
+
 <div class="container">
+  <h2> {{ current_user.name }} </h2>
+  <h3> {{ current_user.email }} </h3>
+  <form class="form-inline">
+    <div class="form-group">
+      <input class="form-control" placeholder="What's on your mind?" type="text" ng-model="post.description">
+      <button class="btn btn-default" ng-click="createPost(post)" >Post</button>
+    </div>
+  </form>
   <div class="newsfeed">
-    <div class="post-box" ng-repeat="post in posts">
-      {{ post.description }}
+    <div class="post-box" ng-repeat="post in posts | orderBy: '-created_at'">
       <div class="post-box-time">
         <p>{{post.created_at | amCalendar }}</p>
       </div>
-      {{ post.user_id }}
-      {{ post.username }}
+      <div class="post-box-content">
+        {{ post.description }}
+      </div>
     </div>
   </div>
 </div>

@@ -2,6 +2,7 @@ pathfinder.controller('PostsCtrl', ['$scope','$auth','$interval','ProfileService
   $scope.posts = [];
   $scope.current_user = $auth.user;
   $scope.refreshInterval = 2;
+  $scope.ownsPost = false;
 
   $scope.getPosts = function(){
     return PostsService.getPosts().then(function(response){
@@ -14,10 +15,14 @@ pathfinder.controller('PostsCtrl', ['$scope','$auth','$interval','ProfileService
     PostsService.createPost(post);
   };
 
+  $scope.destroyPost = function(id){
+    PostsService.destroyPost(id);
+  }
+
   $scope.getPosts();
 
-  // $interval(function() {
-  //   $scope.getPosts();
-  // }, $scope.refreshInterval * 1000);
+  $interval(function() {
+    $scope.getPosts();
+  }, $scope.refreshInterval * 1000);
 
 }]);
