@@ -8,6 +8,13 @@ pathfinder.controller('MessagesCtrl', ['$scope','MessagesService', function($sco
     });
   };
 
+  $scope.getMessages = function(id){
+    return MessagesService.getMessages(id).then(function(response){
+      $scope.messages = response.data;
+      console.log(response.data)
+    });
+  };
+
 $scope.getConversations();
 
 }]);

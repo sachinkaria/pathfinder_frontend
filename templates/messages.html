@@ -1,6 +1,12 @@
 <div class="container">
-<div ng-repeat="conversation in conversations">
-  {{ conversation.sender_id }}
-  {{ conversation.recipient_id }}
-</div>
+  <div ng-repeat="conversation in conversations">
+    <button ng-click="getMessages(conversation.id)">
+      {{ conversation.sender_id }}
+      {{ conversation.recipient_id }}
+    </button>
+  </div>
+
+  <div class="jumbotron" ng-repeat="message in messages">
+    {{ message.body}}
+  </div>
 </div>
