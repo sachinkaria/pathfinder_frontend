@@ -31,6 +31,12 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
     url: '/messages',
     templateUrl: 'templates/messages.html',
     controller: 'MessagesCtrl'
+  })
+  .state('users', {
+    name: 'users',
+    url: '/users',
+    templateUrl: 'templates/users.html',
+    controller: 'UsersCtrl'
   });
 
   $urlRouterProvider.otherwise('/');
