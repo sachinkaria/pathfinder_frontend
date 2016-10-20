@@ -1,39 +1,38 @@
 <html>
 <head>
-  <title>Get Penta</title>
+  <title>Pathfinder</title>
+<!-- stylesheets   -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css">
   <link rel="stylesheet" href="custom.css">
+
+<!-- scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <script src="https://unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="bower_components/angular-cookie/angular-cookie.js"></script>
   <script src="bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
   <script src="bower_components/moment/moment.js"></script>
   <script src="bower_components/angular-moment/angular-moment.js"></script>
+
+<!-- app -->
   <script src="app.js"></script>
+
+<!-- services -->
   <script src="javascript/services/PostsService.js"></script>
   <script src="javascript/services/ProfileService.js"></script>
   <script src="javascript/services/MessagesService.js"></script>
   <script src="javascript/services/UsersService.js"></script>
+
+<!-- controllers -->
   <script src="javascript/controllers/MainCtrl.js"></script>
   <script src="javascript/controllers/PostsCtrl.js"></script>
   <script src="javascript/controllers/ProfileCtrl.js"></script>
   <script src="javascript/controllers/MessagesCtrl.js"></script>
   <script src="javascript/controllers/UsersCtrl.js"></script>
-
-
-
 </head>
+
 <body ng-app="pathfinder">
-  <!-- <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          <img alt="pathfinder" src="logo.png">
-        </a>
-      </div>
-    </div>
-  </nav> -->
-  <div ui-view></div>
-</body>
-</html>
+      <div ui-view name="nav"></div>
+      <div ui-view name="content"></div>
+    </body>
+    </html>

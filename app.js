@@ -11,35 +11,68 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
   $stateProvider
   .state('login', {
     url: '/',
-    templateUrl: 'templates/login.html',
-    controller: 'MainCtrl'
+    views: {
+      content: {
+        templateUrl: 'templates/login.html',
+        controller: 'MainCtrl'
+      }
+    }
   })
   .state('home', {
     name: 'home',
     url: '/home',
-    templateUrl: 'templates/home.html',
-    controller: 'PostsCtrl'
+    views: {
+      nav: {
+        templateUrl: 'templates/navbar.html'
+      },
+      content: {
+        templateUrl: 'templates/home.html',
+        controller: 'PostsCtrl'
+      }
+    }
   })
   .state('profile', {
     name: 'profile',
     url: '/profile',
-    templateUrl: 'templates/profile.html',
-    controller: 'ProfileCtrl'
+    views: {
+      nav: {
+        templateUrl: 'templates/navbar.html'
+      },
+      content: {
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileCtrl'
+      }
+    }
   })
   .state('messages', {
     name: 'messages',
     url: '/messages',
-    templateUrl: 'templates/messages.html',
-    controller: 'MessagesCtrl'
+    views: {
+      nav: {
+        templateUrl: 'templates/navbar.html'
+      },
+      content: {
+        templateUrl: 'templates/messages.html',
+        controller: 'MessagesCtrl'
+      }
+    }
   })
   .state('users', {
     name: 'users',
     url: '/users',
-    templateUrl: 'templates/users.html',
-    controller: 'UsersCtrl'
+    views: {
+      nav: {
+        templateUrl: 'templates/navbar.html'
+      },
+      content: {
+        templateUrl: 'templates/users.html',
+        controller: 'UsersCtrl'
+      }
+    }
   });
 
   $urlRouterProvider.otherwise('/');
+
   $authProvider.configure({
     apiUrl: 'http://localhost:3000',
     facebook: '/auth/facebook'
