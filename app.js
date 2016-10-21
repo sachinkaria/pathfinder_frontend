@@ -4,6 +4,10 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
   $rootScope.$on('auth:login-success', function() {
     console.log('GREAT SUCCESS');
     $state.go('home');
+  })
+  $rootScope.$on('auth:logout-success', function() {
+    console.log('GREAT SUCCESS');
+    $state.go('login');
   });
 }])
 .config(['$stateProvider','$urlRouterProvider','$authProvider', function($stateProvider, $urlRouterProvider, $authProvider){
@@ -23,7 +27,8 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
     url: '/home',
     views: {
       nav: {
-        templateUrl: 'templates/navbar.html'
+        templateUrl: 'templates/navbar.html',
+        controller: 'MainCtrl'
       },
       content: {
         templateUrl: 'templates/home.html',
@@ -36,7 +41,8 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
     url: '/profile',
     views: {
       nav: {
-        templateUrl: 'templates/navbar.html'
+        templateUrl: 'templates/navbar.html',
+        controller: 'MainCtrl'
       },
       content: {
         templateUrl: 'templates/profile.html',
@@ -49,7 +55,8 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
     url: '/messages',
     views: {
       nav: {
-        templateUrl: 'templates/navbar.html'
+        templateUrl: 'templates/navbar.html',
+        controller: 'MainCtrl'
       },
       content: {
         templateUrl: 'templates/messages.html',
@@ -62,7 +69,8 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
     url: '/users',
     views: {
       nav: {
-        templateUrl: 'templates/navbar.html'
+        templateUrl: 'templates/navbar.html',
+        controller: 'MainCtrl'
       },
       content: {
         templateUrl: 'templates/users.html',

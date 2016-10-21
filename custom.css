@@ -1,15 +1,21 @@
-/*body{
-background-image: url("background.jpg");
-background-position: center;
-background-size: cover;
-}*/
+body{
+  /*background-image: url("background.jpg");*/
+  font-family: 'Raleway', sans-serif;
+}
 
 .navbar.navbar-default.navbar-fixed-top {
   min-height: 80px;
-  opacity: 0.6;
-  top: 0
+  opacity: 0.8;
+  top: 0;
+  color: white;
+  background-color: #AA3939;
 }
-
+.navbar-default .navbar-nav>li>a {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15pt;
+  color: white;
+}
 .container {
   margin-top: 85px;
 }
@@ -44,19 +50,19 @@ background-size: cover;
 }
 
 .post-box-content {
-    min-height: 60px;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    overflow: hidden;
+  min-height: 60px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .message-box-content {
-    min-height: 30px;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    overflow: hidden;
+  min-height: 30px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .col-xs-12.col-sm-6.col-md-8.messages{
@@ -64,7 +70,7 @@ background-size: cover;
   overflow: scroll
 }
 .jumbotron.messages {
-    padding: 0.5em 0.6em;
+  padding: 0.5em 0.6em;
 }
 
 .jumbotron.login{

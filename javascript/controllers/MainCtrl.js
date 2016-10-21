@@ -19,7 +19,6 @@ pathfinder.controller('MainCtrl', ['$scope','$state','$auth', function($scope,$s
     .catch(function(resp) {
       console.log('nope.');
     });
-    $state.go('home');
   };
 
   $scope.handleBtnClick = function() {
