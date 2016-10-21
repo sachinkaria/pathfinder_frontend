@@ -73,11 +73,24 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
         controller: 'MainCtrl'
       },
       content: {
-        templateUrl: 'templates/users.html',
+        templateUrl: 'templates/users/index.html',
         controller: 'UsersCtrl'
       }
     }
-  });
+  })
+    .state('users.show', {
+      url: '/:id',
+      views: {
+        nav: {
+          templateUrl: 'templates/navbar.html',
+          controller: 'MainCtrl'
+        },
+        content: {
+          templateUrl: 'templates/users/show.html',
+          controller: 'UsersCtrl'
+        }
+      }
+    });
 
   $urlRouterProvider.otherwise('/');
 

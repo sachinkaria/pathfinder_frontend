@@ -1,8 +1,8 @@
 <div class="container">
   <label>Search: <input ng-model="searchText"></label>
-  <div ng-repeat="user in users | filter:searchText ">
+  <a ui-sref="users.show({id: user.id})" ng-click="showUser(user.id)" ng-repeat="user in users | filter:searchText ">
     <h2> {{ user.name }} </h2>
     <h3> {{ user.email }} </h3>
     <button ng-click="createConversation({sender_id: current_user.id, recipient_id: user.id})" >Message</button>
-  </div>
+  </a>
 </div>

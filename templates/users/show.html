@@ -1,0 +1,14 @@
+<div class="container">
+  <h2> {{ user.name }} </h2>
+  <h3> {{ user.email }} </h3>
+  <div class="newsfeed">
+    <div class="post-box" ng-repeat="post in user.posts | orderBy: '-created_at'">
+      <div class="post-box-time">
+        <p>{{post.created_at | amCalendar }}</p>
+      </div>
+      <div class="post-box-content">
+        {{ post.description }}
+      </div>
+    </div>
+  </div>
+</div>
