@@ -13,4 +13,9 @@ pathfinder.service('MessagesService', ['$http', function($http){
     return $http.get("http://localhost:3000/conversations/" + id + "/messages")
   };
 
+  self.sendMessage = function(conversation_id, message){
+    console.log(message);
+    return $http.post("http://localhost:3000/conversations/" + conversation_id + "/messages.json", message)
+  }
+
 }]);
