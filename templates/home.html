@@ -9,17 +9,18 @@
               <button class="btn btn-default" ng-click="createPost(post)" >Post</button>
             </div>
           </form>
-            <div class="jumbotron messages" ng-repeat="post in posts | orderBy: '-created_at'">
-              <h4 class="post-box-username">
-                {{post.user.name}}
-              </h4>
-              <h5 class="post-box-time">
-                {{post.created_at | amCalendar }}
-              </h5>
-              <p class="message-box-content for-post">
-                {{ post.description }}
-              </p>
-            </div>
+          <div class="jumbotron messages" ng-repeat="post in posts | orderBy: '-created_at'">
+            <img class="img-circle avatar avatar-original posts" src="http://i.imgur.com/BXUWshJ.jpg">
+            <h4 class="post-box-username">
+              {{post.user.name}}
+            </h4>
+            <h5 class="post-box-time">
+              {{post.created_at | amCalendar }}
+            </h5>
+            <p class="message-box-content for-post">
+              {{ post.description }}
+            </p>
+          </div>
         </div>
       </div>
     </div>

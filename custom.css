@@ -83,6 +83,7 @@ body{
   padding: 0.5em 0.6em;
   padding-top: 10px;
   padding-bottom: 10px;
+  background-color: #FFF8F8;
 }
 
 .jumbotron.login{
@@ -103,6 +104,14 @@ body{
 .vertical-center {
   display: flex;
   align-items: center;
+}
+
+.img-circle.avatar.avatar-original{
+  -webkit-user-select:none;
+  float:left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  max-width: 40px;
 }
 
 .form-inline .form-group .form-control {
