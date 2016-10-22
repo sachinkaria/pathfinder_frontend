@@ -30,6 +30,11 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
         templateUrl: 'templates/navbar.html',
         controller: 'MainCtrl'
       },
+      resolve: {
+        auth: function($auth) {
+          return $auth.validateUser();
+        }
+      },
       content: {
         templateUrl: 'templates/home.html',
         controller: 'PostsCtrl'
@@ -39,6 +44,11 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
   .state('profile', {
     name: 'profile',
     url: '/profile',
+    resolve: {
+      auth: function($auth) {
+        return $auth.validateUser();
+      }
+    },
     views: {
       nav: {
         templateUrl: 'templates/navbar.html',
@@ -53,6 +63,11 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
   .state('messages', {
     name: 'messages',
     url: '/messages',
+    resolve: {
+      auth: function($auth) {
+        return $auth.validateUser();
+      }
+    },
     views: {
       nav: {
         templateUrl: 'templates/navbar.html',
@@ -78,19 +93,20 @@ var pathfinder = angular.module('pathfinder', ['ui.router','ng-token-auth','ipCo
       }
     }
   })
-    .state('users.show', {
-      url: '/:id',
-      views: {
-        nav: {
-          templateUrl: 'templates/navbar.html',
-          controller: 'MainCtrl'
-        },
-        content: {
-          templateUrl: 'templates/users/show.html',
-          controller: 'UsersCtrl'
-        }
+  .state('users.show', {
+    name: 'users.show',
+    url: '/show/:id',
+    views: {
+      nav: {
+        templateUrl: 'templates/navbar.html',
+        controller: 'MainCtrl'
+      },
+      content: {
+        templateUrl: 'templates/users/show.html',
+        controller: 'UsersCtrl'
       }
-    });
+    }
+  });
 
   $urlRouterProvider.otherwise('/');
 
