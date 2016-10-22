@@ -11,9 +11,7 @@ pathfinder.service('PostsService', ['$http', function($http){
   };
 
   self.createPost = function(post){
-    $http.post("http://localhost:3000/posts.json", post).success(function(data){
-      console.log(data)
-    });
+    return $http.post("http://localhost:3000/posts.json", post)
   };
 
   self.destroyPost = function(id){

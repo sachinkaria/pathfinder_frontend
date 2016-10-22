@@ -1,31 +1,13 @@
-pathfinder.controller('ProfileCtrl', ['$scope','$auth','$interval','PostsService', function($scope, $auth, $interval, PostsService){
-  $scope.posts = [];
+pathfinder.controller('ProfileCtrl', ['$scope','$auth','$interval','$state','PostsService', function($scope, $auth, $interval, $state, PostsService){
+  $scope.posts = $auth.user.posts;
   $scope.current_user = $auth.user;
   $scope.refreshInterval = 2;
 
-  $scope.validateUser = function(){
-    if ($auth.user === undefined){
-      $scope.validateUser();
-    } else {
-      $scope.getPosts();
-    };
-  };
-
-  $scope.getPosts = function(){
-    console.log($auth.user.id)
-    return PostsService.getUserPosts($auth.user.id).then(function(response){
-      $scope.posts = response.data.posts;
-    });
-  };
-
   $scope.createPost = function(post){
-    PostsService.createPost(post);
+    return PostsService.createPost(post).then(function(response){
+      $state.go($state.current, {}, {reload: true});
+      // $scope.posts = $auth.user.posts;
+    });
   }
-
-  $scope.validateUser();
-  //
-  // $interval(function() {
-  //   $scope.getPosts();
-  // }, $scope.refreshInterval * 1000);
 
 }]);

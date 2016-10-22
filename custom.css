@@ -65,12 +65,24 @@ body{
   overflow: hidden;
 }
 
+.message-box-content.for-post{
+  font-size: 12pt;
+}
+
 .col-xs-12.col-sm-6.col-md-8.messages{
   max-height: 70%;
   overflow: scroll
 }
+
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
 .jumbotron.messages {
   padding: 0.5em 0.6em;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .jumbotron.login{

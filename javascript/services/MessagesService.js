@@ -14,7 +14,6 @@ pathfinder.service('MessagesService', ['$http', function($http){
   };
 
   self.sendMessage = function(conversation_id, message){
-    console.log(message);
     return $http.post("http://localhost:3000/conversations/" + conversation_id + "/messages.json", message)
   }
 

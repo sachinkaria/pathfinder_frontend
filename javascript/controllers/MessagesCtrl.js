@@ -18,7 +18,7 @@ pathfinder.controller('MessagesCtrl', ['$scope','$auth','MessagesService', funct
   $scope.sendMessage = function(message){
     message.user_id = $auth.user.id;
     return MessagesService.sendMessage($scope.conversation_id, message).then(function(response){
-    });
+    $scope.getMessages($scope.conversation_id)});
   };
 
 
